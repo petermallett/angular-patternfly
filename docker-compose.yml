@@ -1,0 +1,15 @@
+name: angular-patternfly
+services:
+  app:
+    image: registry.redhat.io/rhel8/nodejs-22:latest
+    container_name: angular-patternfly.local-dev
+    working_dir: /opt/app-root/src
+    tty: true
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - 4200:4200
+    user: 1000:1000
+    volumes:
+      - ./:/opt/app-root/src:rw
+    command: ["ng", "serve", "--host", "0.0.0.0"]
