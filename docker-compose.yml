@@ -1,7 +1,9 @@
 name: angular-patternfly
 services:
   app:
-    image: registry.redhat.io/rhel8/nodejs-22:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.local-dev
     container_name: angular-patternfly.local-dev
     working_dir: /opt/app-root/src
     tty: true
