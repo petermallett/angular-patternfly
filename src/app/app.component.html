@@ -1,7 +1,7 @@
 <div class="pf-v6-c-page">
-  <app-masthead />
+  <app-masthead [(sidebarCollapsed)]="sidebarCollapsed" />
 
-  <div class="pf-v6-c-page__sidebar">
+  <div [class]="{'pf-v6-c-page__sidebar': true, 'pf-m-collapsed': sidebarCollapsed}">
     <div class="pf-v6-c-page__sidebar-body">
       <p>Navigation</p>
     </div>
